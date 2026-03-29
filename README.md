@@ -15,9 +15,13 @@ The four stages of analysis: the screener works as a funnel. Every stock on the 
 
 3.2 Stage 2 - ISA Eligibility Filter (isa_filter.py)
    Not every security listed in London can be held in an ISA. This stage removes anything that HMRC rules do not allow inside a Stocks & Shares ISA. The tool excludes:
+   
    -ETFs & ETCs (Exchange Traded Funds/Commodities): these are baskets of assets, not individual companies.
+   
    -Investment trust and REITs: while some are ISA-eligible, the screener conservatively focuses on direct company shares to keep the analysis clean.
+   
    -Any instrument not directly listed on the LSE: for example, foreign shares not cross-listed in London.
+   
 What remains after this filter is a list of ordinary shares in actual operating companies that you can legally and practically hold in your ISA.
 
 3.3 Stage 3 - Financial Health Filter (health_filter.py)
