@@ -1,7 +1,6 @@
 # src/main.py
 """
 LSE ISA Value & Dividend Screener.
-Author: Esteban Santamaria
 Description: analyse LSE stocks available on ISA accounts,
 filter by financial health and generates top 5 for Value and Dividend investing.
 """
