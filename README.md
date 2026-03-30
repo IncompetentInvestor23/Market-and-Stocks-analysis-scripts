@@ -32,7 +32,7 @@ What remains after this filter is a list of ordinary shares in actual operating 
 
    -Debt level (up to 2 points): measured by the Debt-to-Equity ratio, wich compares how much the company owes versus how much belongs to shareholders. A very low ratio (below 30) gets 2 points. A manageable ratio (below 50) gets 1 point. Companies with very high debt get nothing. High debt is dangerous in rising interest rate environments and can wipe out shareholders if the business hits a rough patch.
 
-   -Liquidity (up to 1 point): measured by the Current Ratio, wich compares a company's short-term assets (cash, receivables, inventory) to its short-term debts. A ratio avobe 2 means the company could pay off everything it owes in the next 12 months twice over, that is financial comfort. Anything below 1.5 is a concern; it means the company may struggle to meet near-term obligations.
+   -Liquidity (up to 1 point): measured by the Current Ratio, wich compares a company's short-term assets (cash, receivables, inventory) to its short-term debts. A ratio above 2 means the company could pay off everything it owes in the next 12 months twice over, that is financial comfort. Anything below 1.5 is a concern; it means the company may struggle to meet near-term obligations.
 
    -Profitability (up to 1.5 points): two things are checked here. First, is the company actually making money? A positive net income earns 1 point. Second, is the operating margin avobe 10%? This measures how efficiently the core business converts revenue into profit before financial engineering (interest, taxes). A healthy operating margin means the business model itself works, not just the accounting.
 
@@ -43,7 +43,7 @@ Minimum to pass: 3 out of 5 points. Companies that fail this filter are eliminat
 3.4A - Value Investing Screen (value_screener.py)
    This screen looks for companies that are underpriced relative to their fundamentals. Each stock is scored out of 10 across five criteria:
 
-   -Price-to-Earnings ratio (up to 3 points): tells you how many years of current earnings you are paying for the company. A P/E of 10 means you pay 10x the annual profit. Anything below 15 is considered value territory, below 10 is genuinely cheap. High P/E ratios (avobe 20) suggest the market is pricing in a lot of future growth, fine for growth investing but not for value.
+   -Price-to-Earnings ratio (up to 3 points): tells you how many years of current earnings you are paying for the company. A P/E of 10 means you pay 10x the annual profit. Anything below 15 is considered value territory, below 10 is genuinely cheap. High P/E ratios (above 20) suggest the market is pricing in a lot of future growth, fine for growth investing but not for value.
 
    -Price-to-Book ratio (up to 2 points): book value is the net worth of the company on paper, what you would theoretically recover if it were liquidated. Buying a company below its book value (P/B < 1) is the classic "margin of safety", you are paying less than the accounting value of the assets. P/B below 1.5 is still reasonable. Very high P/B scores nothing.
 
