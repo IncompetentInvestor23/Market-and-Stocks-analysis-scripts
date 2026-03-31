@@ -1,8 +1,8 @@
 """
 Gold / FTSE 100 — Liquidity Rotation Signal
-pip install yfinance pandas
 """
 
+import os
 import pandas as pd
 import yfinance as yf
 from datetime import datetime, timedelta
@@ -111,7 +111,8 @@ def main():
     print("="*55 + "\n")
 
     if EXPORT_CSV:
-        out = "gold_ftse_signal.csv"
+        out = "../data/output/gold_ftse_signal.csv"
+        os.makedirs(os.path.dirname(out), exist_ok=True)
         df[["Gold", "FTSE", "Corr"]].to_csv(out)
         print(f"[CSV] Exported → {out}\n")
 
