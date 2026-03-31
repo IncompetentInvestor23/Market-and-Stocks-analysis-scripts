@@ -133,9 +133,9 @@ class DividendScreener:
             'metrics': metrics
         }
 
-def get_top5_dividend(healthy_stocks):
+def get_top15_dividend(healthy_stocks):
     """
-    Select top 5 stocks for dividend investing.
+    Select top 15 stocks for dividend investing.
     """
     screener = DividendScreener()
     results = []
@@ -159,11 +159,11 @@ def get_top5_dividend(healthy_stocks):
                 'Factors': ', '.join(analysis['factors'])
             })
 
-    # Order by score and take top 5
-    top5 = sorted(results, key=lambda x: x['Dividend Score'], reverse=True)[:5]
+    # Order by score and take top 15
+    top15 = sorted(results, key=lambda x: x['Dividend Score'], reverse=True)[:15]
 
-    print(f"\n TOP 5 DIVIDEND STOCKS:")
-    for i, stock in enumerate(top5, 1):
+    print(f"\n TOP 15 DIVIDEND STOCKS:")
+    for i, stock in enumerate(top15, 1):
         print(f" {i}. {stock['Ticker']}: Score {stock['Dividend Score']:.1f} - Yield {stock['Yield %']:.1f}%")
 
-    return top5
+    return top15
