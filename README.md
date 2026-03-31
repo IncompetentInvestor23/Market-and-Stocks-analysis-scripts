@@ -53,7 +53,7 @@ Minimum to pass: 3 out of 5 points. Companies that fail this filter are eliminat
 
    -Earnings Growth (up to 1.5 points): a value stock is not necessarily a declining one. If a cheap company is also growing its earnings, thats the best of both worlds, you buy low and growth does the rest. Earnings growth above 5% per year earns full marks here.
 
-The result is a ranked list of the top 5 value stocks: companies that combine chepness on multiple metrics with solid fundamentals.
+The result is a ranked list of the top 15 value stocks: companies that combine chepness on multiple metrics with solid fundamentals.
 
 3.4B - Dividend Investing Screen (dividend_screener.py)
    -This screen looks for companies that are reliable, generous payers of dividends: companies with a long track record of paying and growing their dividend. Each stock is scored out of 10 across four criteria:
@@ -66,7 +66,7 @@ The result is a ranked list of the top 5 value stocks: companies that combine ch
    
    - Free Cash Flow Coverage (up to 2.5 points): this is the most rigorous dividend sustainability check. Does the company generate enough real cash, not accounting profit, but actual cash to pay its dividend? The tool compares the total FCF to the total cash it pays out in dividends to all shareholders. A coverage ratio above 2x means the dividend is well protected. Below 1x means the company is paying out more in dividends than it earns in cash, a red flag that a cut may be coming.
 
-The result is a ranked list of the top 5 dividend stocks: companies combining an attractive and sustainable income with a solid financial foundation.
+The result is a ranked list of the top 15 dividend stocks: companies combining an attractive and sustainable income with a solid financial foundation.
 
 3.5 What the output tells you: the tool produces two CSV files, one for each strategy. Each row is a company, and the columns include:
 
