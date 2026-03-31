@@ -2,7 +2,7 @@
 """
 LSE ISA Value & Dividend Screener.
 Description: analyse LSE stocks available on ISA accounts,
-filter by financial health and generates top 5 for Value and Dividend investing.
+filter by financial health and generates top 15 for Value and Dividend investing.
 """
 
 import yfinance as yf
@@ -18,8 +18,8 @@ sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 from tickers_lse import get_lse_tickers
 from isa_filter import filter_isa_stocks
 from health_filter import filter_healthy_stocks
-from value_screener import get_top5_value
-from dividend_screener import get_top5_dividend
+from value_screener import get_top15_value
+from dividend_screener import get_top15_dividend
 
 def fetch_stock_data(ticker):
     """
@@ -38,7 +38,7 @@ def fetch_stock_data(ticker):
         print(f"Error with {ticker}: {str(e)[:50]}")
         return None
 
-def save_results(value_top5, dividend_top5, output_dir='../data/output'):
+def save_results(value_top15, dividend_top15, output_dir='../data/output'):
     """
     Save results to a csv file.
     """
@@ -47,25 +47,25 @@ def save_results(value_top5, dividend_top5, output_dir='../data/output'):
 
     timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
 
-    # Save top 5 value
-    if value_top5:
-        df_value = pd.DataFrame(value_top5)
-        value_file = f"{output_dir}/value_top5_{timestamp}.csv"
+    # Save top 15 value
+    if value_top15:
+        df_value = pd.DataFrame(value_top15)
+        value_file = f"{output_dir}/value_top15_{timestamp}.csv"
         df_value.to_csv(value_file, index=False)
-        print(f"\n Value top5 saved: {value_file}")
+        print(f"\n Value top15 saved: {value_file}")
 
-    # Save top 5 dividend
-    if dividend_top5:
-        df_div = pd.DataFrame(dividend_top5)
-        div_file = f"{output_dir}/dividend_top5_{timestamp}.csv"
+    # Save top 15 dividend
+    if dividend_top15:
+        df_div = pd.DataFrame(dividend_top15)
+        div_file = f"{output_dir}/dividend_top15_{timestamp}.csv"
         df_div.to_csv(div_file, index=False)
-        print(f"\n Dividend top5 saved: {div_file}")
+        print(f"\n Dividend top15 saved: {div_file}")
 
     # Save file with static timestamp (last analysis)
-    if value_top5:
-        pd.DataFrame(value_top5).to_csv(f"{output_dir}/value_top5_latest.csv", index=False)
-    if dividend_top5:
-        pd.DataFrame(dividend_top5).to_csv(f"{output_dir}/dividend_top5_latest.csv", index=False)
+    if value_top15:
+        pd.DataFrame(value_top15).to_csv(f"{output_dir}/value_top15_latest.csv", index=False)
+    if dividend_top15:
+        pd.DataFrame(dividend_top15).to_csv(f"{output_dir}/dividend_top15_latest.csv", index=False)
 
 def main():
     """
@@ -78,8 +78,8 @@ def main():
     print("  1. Obtain LSE tickers")
     print("  2. Filter ISA availability")
     print("  3. Filter financial health")
-    print("  4. Analyse Value investing (top 5)")
-    print("  5. Analyse Dividend investing (top 5)")
+    print("  4. Analyse Value investing (top 15)")
+    print("  5. Analyse Dividend investing (top 15)")
     print("=" * 70)
 
     # STEP 1: Obtain tickers
@@ -121,15 +121,15 @@ def main():
 
     # STEP 5: Value analysis
     print("\n STEP 5: Analysing for Value Investing...")
-    value_top5 = get_top5_value(healthy_stocks)
+    value_top15 = get_top15_value(healthy_stocks)
 
     # STEP 6: Dividend analysis
     print("\n STEP 6: Analysing for Dividend Investing...")
-    dividend_top5 = get_top5_dividend(healthy_stocks)
+    dividend_top15 = get_top15_dividend(healthy_stocks)
 
     # STEP 7: Save results
     print("\n STEP 7: Saving results...")
-    save_results(value_top5, dividend_top5)
+    save_results(value_top15, dividend_top15)
 
     # Final summary
     print("\n" + "=" * 70)
@@ -140,8 +140,8 @@ def main():
     print(f"  -Obtained data: {len(all_stocks)}")
     print(f"  -ISA available: {len(isa_stocks)}")
     print(f"  -Financial health: {len(healthy_stocks)}")
-    print(f"\n  Top 5 Value generated")
-    print(f"\n  Top 5 Dividend generated")
+    print(f"\n  Top 15 Value generated")
+    print(f"\n  Top 15 Dividend generated")
     print(f"\n  Check the 'data/output' directory for the CSV")
 
 if __name__ == '__main__':
