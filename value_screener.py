@@ -116,9 +116,9 @@ class ValueScreener:
             'metrics': metrics
         }
 
-def get_top5_value(healthy_stocks):
+def get_top15_value(healthy_stocks):
     """
-    Select the top 5 value stocks.
+    Select the top 15 value stocks.
     """
     screener = ValueScreener()
     results = []
@@ -141,11 +141,11 @@ def get_top5_value(healthy_stocks):
             'Factors': ', '.join(analysis['factors'])
         })
 
-    # Order by score and take top 5
-    top5 = sorted(results, key=lambda x: x['Value Score'], reverse=True)[:5]
+    # Order by score and take top 15
+    top15 = sorted(results, key=lambda x: x['Value Score'], reverse=True)[:15]
 
-    print(f"\n TOP 5 VALUE STOCKS:")
-    for i, stock in enumerate(top5, 1):
+    print(f"\n TOP 15 VALUE STOCKS:")
+    for i, stock in enumerate(top15, 1):
         print(f" {i}. {stock['Ticker']}: {stock['Value Score']:.1f} - {stock['Factors'][:50]}")
 
-    return top5
+    return top15
