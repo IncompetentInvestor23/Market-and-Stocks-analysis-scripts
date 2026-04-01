@@ -7,7 +7,7 @@ This repository contains the Python scripts that I use for different market and 
 
 Note: This gold FTSE100 correlation should be only screened after a drawdown of at least -35% from ATH of the FTSE100.
 
-3. main.py (using tickers_lse, isa_filter, health_filter, value_screener and dividend_screener) : this tool is an automated stock screener designed for UK retail investors who hold shares inside an ISA (Individual Savings Account). Its goal is simple: scan the London Stock Exchange (LSE), eliminate companies that do not meet a minimum quality threshold, and present two shortlists of five stocks each: one for value investing and one for dividend investing.
+3. stock_screener.py (using tickers_lse, isa_filter, health_filter, value_screener and dividend_screener) : this tool is an automated stock screener designed for UK retail investors who hold shares inside an ISA (Individual Savings Account). Its goal is simple: scan the London Stock Exchange (LSE), eliminate companies that do not meet a minimum quality threshold, and present two shortlists of five stocks each: one for value investing and one for dividend investing.
 All data is pulled in real time from Yahoo Finance, so every time I run it I get a fresh analysis based on current market prices and the latest company financials.
 The four stages of analysis: the screener works as a funnel. Every stock on the FTSE 100 and FTSE 250 enters at the top, and only those that pass all four stages make it to the final recommendations.
 
