@@ -1,4 +1,4 @@
-# src/main.py
+# src/stock_screener.py
 """
 LSE ISA Value & Dividend Screener.
 Description: analyse LSE stocks available on ISA accounts,
