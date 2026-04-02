@@ -1,11 +1,9 @@
 # Market-and-Stocks-analysis-scripts
 This repository contains the Python scripts that I use for different market and stock analysis using Yahoo Finance.
 
-Folder structure:
-|
-|--data--output (here is where the CSV with the results are saved)
-|
-|--src (here is where the scripts are stored)
+Folder Structure:
+../data/output (here is where the CSV with the results are saved)
+../src (here is where the scripts are stored)
 
 1. market_ath_diff.py : returns the current price change from ATH of the SP500, Nasdaq, FTSE100 and FTSE250.
 
