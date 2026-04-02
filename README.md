@@ -42,7 +42,7 @@ What remains after this filter is a list of ordinary shares in actual operating 
 
    -Liquidity (up to 1 point): measured by the Current Ratio, wich compares a company's short-term assets (cash, receivables, inventory) to its short-term debts. A ratio above 2 means the company could pay off everything it owes in the next 12 months twice over, that is financial comfort. Anything below 1.5 is a concern; it means the company may struggle to meet near-term obligations.
 
-   -Profitability (up to 1.5 points): two things are checked here. First, is the company actually making money? A positive net income earns 1 point. Second, is the operating margin avobe 10%? This measures how efficiently the core business converts revenue into profit before financial engineering (interest, taxes). A healthy operating margin means the business model itself works, not just the accounting.
+   -Profitability (up to 1.5 points): two things are checked here. First, is the company actually making money? A positive net income earns 1 point. Second, is the operating margin above 10%? This measures how efficiently the core business converts revenue into profit before financial engineering (interest, taxes). A healthy operating margin means the business model itself works, not just the accounting.
 
    -Free Cash Flow (up to 0.5 points): net profit can be manipulated through accounting choices. Free Cash Flow (FCF) is harder to fake, it is the actual cash left over after the company has paid to run and invest in its business. A positive FCF means the company is genuinely generating money it can return to shareholders or reinvest.
 
