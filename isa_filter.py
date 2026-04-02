@@ -1,12 +1,12 @@
 # src/isa_filter.py
 """
-Filter to verify ISA UK elegibility.
+Filter to verify ISA UK eligibility.
 Based on HMRC regulation and brokers guidance.
 """
 
 class ISAFilter:
     """
-    Verify if a stock can be holded on an UK ISA account.
+    Verify if a stock can be holded on a UK ISA account.
     """
     def __init__(self):
         #Exchanges recognized by HMRC
