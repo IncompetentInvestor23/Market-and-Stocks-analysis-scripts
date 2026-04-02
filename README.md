@@ -91,6 +91,8 @@ The result is a ranked list of the top 15 dividend stocks: companies combining a
    -Key ratios: P/E, P/B, ROE, Yield, Payout, FCF Coverage... depending on the strategy.
 
    -Factors: a plain-English summary of the two or three things that drove the score.
+
+Note: in script 3, only stock_screener.py is and executable script, tickers_lse.py, isa_filter.py, health_filter.py, value_screener.py and dividend_screener.py are only used by stock_screener.py.
    
 LEGAL DISCLAIMER:
 
