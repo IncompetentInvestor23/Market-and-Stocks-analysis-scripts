@@ -11,22 +11,16 @@ Folder Structure:
 
 Scripts:
 
-1. market_ath_diff.py : returns the current price change from ATH of the SP500, Nasdaq, FTSE100 and FTSE250.
-
-2. gold_ftse_signal.py : it fetches the closing prices of gold futures and the FTSE100, calculaltes the daily returns of each and computes the rolling 30-day correlation between them. That single number, ranging from -1 to +1, tells you what kind of market regime you are in. A correlation of -1 means that gold and the FTSE100 move in opposite directions (pure crisis mode). A correlation of 0 means the two assets are moving indepently of each other, the panic is fading. A correlation of +1 means they move together, liquidity is back in the system.
-
-Note: This gold FTSE100 correlation should be only screened after a drawdown of at least -35% from ATH of the FTSE100.
-
-3. stock_screener.py (using tickers_lse, isa_filter, health_filter, value_screener and dividend_screener) : this tool is an automated stock screener designed for UK retail investors who hold shares inside an ISA (Individual Savings Account). Its goal is simple: scan the London Stock Exchange (LSE), eliminate companies that do not meet a minimum quality threshold, and present two shortlists of fifteen stocks each: one for value investing and one for dividend investing.
+1. stock_screener.py (using tickers_lse, isa_filter, health_filter, value_screener and dividend_screener) : this tool is an automated stock screener designed for UK retail investors who hold shares inside an ISA (Individual Savings Account). Its goal is simple: scan the London Stock Exchange (LSE), eliminate companies that do not meet a minimum quality threshold, and present two shortlists of fifteen stocks each: one for value investing and one for dividend investing.
 All data is pulled in real time from Yahoo Finance, so every time I run it I get a fresh analysis based on current market prices and the latest company financials.
 The four stages of analysis: the screener works as a funnel. Every stock on the FTSE 100 and FTSE 250 enters at the top, and only those that pass all four stages make it to the final recommendations.
 
-3.1 Stage 1 - Universe: FTSE 100 & FTSE 250 (tickers_lse.py)
+1.1 Stage 1 - Universe: FTSE 100 & FTSE 250 (tickers_lse.py)
    The starting universe is made up of approximately 200 companies listed on the LSE, covering the 100 largest (FTSE 100) and the next 250 largest (FTSE 250) by market capitalisation.
 
 Note: the tickers_lse.py FTSE 100 and FTSE 250 ticker list are hardcoded and have to be manually updated quarterly (March, June, September and December), the list provided in this code may be outdated.
 
-3.2 Stage 2 - ISA Eligibility Filter (isa_filter.py)
+1.2 Stage 2 - ISA Eligibility Filter (isa_filter.py)
    Not every security listed in London can be held in an ISA. This stage removes anything that HMRC rules do not allow inside a Stocks & Shares ISA. The tool excludes:
    
    -ETFs & ETCs (Exchange Traded Funds/Commodities): these are baskets of assets, not individual companies.
@@ -37,7 +31,7 @@ Note: the tickers_lse.py FTSE 100 and FTSE 250 ticker list are hardcoded and hav
    
 What remains after this filter is a list of ordinary shares in actual operating companies that you can legally and practically hold in your ISA.
 
-3.3 Stage 3 - Financial Health Filter (health_filter.py)
+1.3 Stage 3 - Financial Health Filter (health_filter.py)
    This is the most important gate in the process. A company can look attractive on price alone but be dangerously fragile underneath. This stage make sure that the company is fundamentally solid. It scores each company out of 5 points across four dimensions:
 
    -Debt level (up to 2 points): measured by the Debt-to-Equity ratio, wich compares how much the company owes versus how much belongs to shareholders. A very low ratio (below 30) gets 2 points. A manageable ratio (below 50) gets 1 point. Companies with very high debt get nothing. High debt is dangerous in rising interest rate environments and can wipe out shareholders if the business hits a rough patch.
@@ -50,7 +44,7 @@ What remains after this filter is a list of ordinary shares in actual operating 
 
 Minimum to pass: 3 out of 5 points. Companies that fail this filter are eliminated regardless of how cheap they look on valuation metrics.
 
-3.4A - Value Investing Screen (value_screener.py)
+1.4A - Value Investing Screen (value_screener.py)
    This screen looks for companies that are underpriced relative to their fundamentals. Each stock is scored out of 10 across five criteria:
 
    -Price-to-Earnings ratio (up to 3 points): tells you how many years of current earnings you are paying for the company. A P/E of 10 means you pay 10x the annual profit. Anything below 15 is considered value territory, below 10 is genuinely cheap. High P/E ratios (above 20) suggest the market is pricing in a lot of future growth, fine for growth investing but not for value.
@@ -65,7 +59,7 @@ Minimum to pass: 3 out of 5 points. Companies that fail this filter are eliminat
 
 The result is a ranked list of the top 15 value stocks: companies that combine chepness on multiple metrics with solid fundamentals.
 
-3.4B - Dividend Investing Screen (dividend_screener.py)
+1.4B - Dividend Investing Screen (dividend_screener.py)
    -This screen looks for companies that are reliable, generous payers of dividends: companies with a long track record of paying and growing their dividend. Each stock is scored out of 10 across four criteria:
 
    -Dividend Yield (up to 3 points): the annual dividend divided by the share price. A yield between 5% and 10% earns maximum points, it is high enough to be genuinely attractive as income. A yield above 10% is treated with suspicion: yields that high often signakl that the market expects the dividend to be cut (a "dividend trap"). A yield between 3% and 5% is good, below 3% scores lower.
@@ -78,7 +72,7 @@ The result is a ranked list of the top 15 value stocks: companies that combine c
 
 The result is a ranked list of the top 15 dividend stocks: companies combining an attractive and sustainable income with a solid financial foundation.
 
-3.5 What the output tells you: the tool produces two CSV files, one for each strategy. Each row is a company, and the columns include:
+1.5 What the output tells you: the tool produces two CSV files, one for each strategy. Each row is a company, and the columns include:
 
    -Ticker: the stock market code.
 
